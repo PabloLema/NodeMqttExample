@@ -1,0 +1,13 @@
+/* jshint esversion: 8 */
+process.env.PORT = process.env.PORT || 3000;
+process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
+
+let urlDB;
+
+if (process.env.NODE_ENV === 'dev') {
+    urlDB = 'mongodb://localhost:27017/sensores';
+} else {
+    urlDB = process.env.MONGO_URL;
+}
+
+process.env.URLDB = urlDB;
